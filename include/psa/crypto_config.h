@@ -45,80 +45,22 @@
  * \{
  */
 
-#define PSA_WANT_ALG_CBC_NO_PADDING             1
-#define PSA_WANT_ALG_CBC_PKCS7                  1
-#define PSA_WANT_ALG_CCM                        1
-#define PSA_WANT_ALG_CCM_STAR_NO_TAG            1
-#define PSA_WANT_ALG_CMAC                       1
-#define PSA_WANT_ALG_CFB                        1
-#define PSA_WANT_ALG_CHACHA20_POLY1305          1
-#define PSA_WANT_ALG_CTR                        1
-#define PSA_WANT_ALG_DETERMINISTIC_ECDSA        1
-#define PSA_WANT_ALG_ECB_NO_PADDING             1
 #define PSA_WANT_ALG_ECDH                       1
-#define PSA_WANT_ALG_FFDH                       1
 #define PSA_WANT_ALG_ECDSA                      1
-#define PSA_WANT_ALG_JPAKE                      1
 #define PSA_WANT_ALG_GCM                        1
-#define PSA_WANT_ALG_HKDF                       1
-#define PSA_WANT_ALG_HKDF_EXTRACT               1
-#define PSA_WANT_ALG_HKDF_EXPAND                1
-#define PSA_WANT_ALG_HMAC                       1
-#define PSA_WANT_ALG_MD5                        1
-#define PSA_WANT_ALG_OFB                        1
-#define PSA_WANT_ALG_PBKDF2_HMAC                1
-#define PSA_WANT_ALG_PBKDF2_AES_CMAC_PRF_128    1
-#define PSA_WANT_ALG_RIPEMD160                  1
-#define PSA_WANT_ALG_RSA_OAEP                   1
-#define PSA_WANT_ALG_RSA_PKCS1V15_CRYPT         1
-#define PSA_WANT_ALG_RSA_PKCS1V15_SIGN          1
-#define PSA_WANT_ALG_RSA_PSS                    1
-#define PSA_WANT_ALG_SHA_1                      1
-#define PSA_WANT_ALG_SHA_224                    1
 #define PSA_WANT_ALG_SHA_256                    1
-#define PSA_WANT_ALG_SHA_384                    1
-#define PSA_WANT_ALG_SHA_512                    1
-#define PSA_WANT_ALG_SHA3_224                   1
-#define PSA_WANT_ALG_SHA3_256                   1
-#define PSA_WANT_ALG_SHA3_384                   1
-#define PSA_WANT_ALG_SHA3_512                   1
-#define PSA_WANT_ALG_STREAM_CIPHER              1
 #define PSA_WANT_ALG_TLS12_PRF                  1
-#define PSA_WANT_ALG_TLS12_PSK_TO_MS            1
-#define PSA_WANT_ALG_TLS12_ECJPAKE_TO_PMS       1
-#define PSA_WANT_ALG_SHAKE128                   1
-#define PSA_WANT_ALG_SHAKE256                   1
 
-#define PSA_WANT_ECC_BRAINPOOL_P_R1_256         1
-#define PSA_WANT_ECC_BRAINPOOL_P_R1_384         1
-#define PSA_WANT_ECC_BRAINPOOL_P_R1_512         1
-#define PSA_WANT_ECC_MONTGOMERY_255             1
-#define PSA_WANT_ECC_MONTGOMERY_448             1
-#define PSA_WANT_ECC_SECP_K1_256                1
 /* For secp256r1, consider enabling #MBEDTLS_PSA_P256M_DRIVER_ENABLED
  * (see the description in psa/crypto_config.h for details). */
 #define PSA_WANT_ECC_SECP_R1_256                1
-#define PSA_WANT_ECC_SECP_R1_384                1
-#define PSA_WANT_ECC_SECP_R1_521                1
 
-#define PSA_WANT_DH_RFC7919_2048                1
-#define PSA_WANT_DH_RFC7919_3072                1
-#define PSA_WANT_DH_RFC7919_4096                1
-#define PSA_WANT_DH_RFC7919_6144                1
-#define PSA_WANT_DH_RFC7919_8192                1
-
-#define PSA_WANT_KEY_TYPE_DERIVE                1
-#define PSA_WANT_KEY_TYPE_PASSWORD              1
-#define PSA_WANT_KEY_TYPE_PASSWORD_HASH         1
-#define PSA_WANT_KEY_TYPE_HMAC                  1
 #define PSA_WANT_KEY_TYPE_AES                   1
-#define PSA_WANT_KEY_TYPE_ARIA                  1
-#define PSA_WANT_KEY_TYPE_CAMELLIA              1
-#define PSA_WANT_KEY_TYPE_CHACHA20              1
 #define PSA_WANT_KEY_TYPE_ECC_PUBLIC_KEY        1
-#define PSA_WANT_KEY_TYPE_DH_PUBLIC_KEY         1
-#define PSA_WANT_KEY_TYPE_RAW_DATA              1
-#define PSA_WANT_KEY_TYPE_RSA_PUBLIC_KEY        1
+#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_IMPORT   1
+#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_GENERATE 1
+#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_DERIVE   1
+
 
 /*
  * The following symbols extend and deprecate the legacy
@@ -127,23 +69,7 @@
  * a generic suport, whereas other ones add more features on top of that and
  * they are more specific.
  */
-#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_BASIC      1
-#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_IMPORT   1
-#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_EXPORT   1
-#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_GENERATE 1
-#define PSA_WANT_KEY_TYPE_ECC_KEY_PAIR_DERIVE   1
 
-#define PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_BASIC      1
-#define PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_IMPORT   1
-#define PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_EXPORT   1
-#define PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_GENERATE 1
-//#define PSA_WANT_KEY_TYPE_RSA_KEY_PAIR_DERIVE   1 /* Not supported */
-
-#define PSA_WANT_KEY_TYPE_DH_KEY_PAIR_BASIC       1
-#define PSA_WANT_KEY_TYPE_DH_KEY_PAIR_IMPORT    1
-#define PSA_WANT_KEY_TYPE_DH_KEY_PAIR_EXPORT    1
-#define PSA_WANT_KEY_TYPE_DH_KEY_PAIR_GENERATE  1
-//#define PSA_WANT_KEY_TYPE_DH_KEY_PAIR_DERIVE    1 /* Not supported */
 /** \} name SECTION Cryptographic mechanism selection (PSA API) */
 
 /**
@@ -167,14 +93,15 @@
  *
  * Enable this module to enable the buffer memory allocator.
  */
-//#define MBEDTLS_MEMORY_BUFFER_ALLOC_C
+// später für esp aktivieren
+//#define MBEDTLS_MEMORY_BUFFER_ALLOC_C 
 
 /**
  * \def MBEDTLS_FS_IO
  *
  * Enable functions that use the filesystem.
  */
-#define MBEDTLS_FS_IO
+//#define MBEDTLS_FS_IO
 
 /**
  * \def MBEDTLS_HAVE_TIME
@@ -189,6 +116,7 @@
  *
  * Comment if your system does not support time functions.
  */
+ // später für esp raus
 #define MBEDTLS_HAVE_TIME
 
 /**
@@ -210,6 +138,7 @@
  * mbedtls_platform_gmtime_r() at compile-time by using the macro
  * MBEDTLS_PLATFORM_GMTIME_R_ALT.
  */
+ // später raus für esp
 #define MBEDTLS_HAVE_TIME_DATE
 
 /**
@@ -223,6 +152,7 @@
  *
  * Uncomment this macro to let the buffer allocator print out error messages.
  */
+// später aktivieren zum debuggen
 //#define MBEDTLS_MEMORY_DEBUG
 
 /**
@@ -235,6 +165,7 @@
  *
  * Uncomment this macro to include backtrace information
  */
+// später aktivieren zum debuggen
 //#define MBEDTLS_MEMORY_BACKTRACE
 
 /**
@@ -286,8 +217,8 @@
 //#define MBEDTLS_PLATFORM_EXIT_ALT
 //#define MBEDTLS_PLATFORM_TIME_ALT
 //#define MBEDTLS_PLATFORM_FPRINTF_ALT
-//#define MBEDTLS_PLATFORM_PRINTF_ALT
-//#define MBEDTLS_PLATFORM_SNPRINTF_ALT
+#define MBEDTLS_PLATFORM_PRINTF_ALT
+#define MBEDTLS_PLATFORM_SNPRINTF_ALT
 //#define MBEDTLS_PLATFORM_VSNPRINTF_ALT
 //#define MBEDTLS_PLATFORM_NV_SEED_ALT
 //#define MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT
@@ -366,7 +297,7 @@
  *
  * Enable this layer to allow use of alternative memory allocators.
  */
-//#define MBEDTLS_PLATFORM_MEMORY
+#define MBEDTLS_PLATFORM_MEMORY
 
 /**
  * \def MBEDTLS_PLATFORM_NO_STD_FUNCTIONS
@@ -385,7 +316,8 @@
  * Uncomment to prevent default assignment of standard functions in the
  * platform layer.
  */
-//#define MBEDTLS_PLATFORM_NO_STD_FUNCTIONS
+ /* Auf Debian auskommentiert lassen, damit Mbed TLS die Standard-OS-Funktionen als Fallback nutzt. */
+ //#define MBEDTLS_PLATFORM_NO_STD_FUNCTIONS
 
 /**
  * Uncomment the macro to let Mbed TLS use your alternate implementation of
@@ -470,7 +402,7 @@
 //#define MBEDTLS_THREADING_C
 
 /* Memory buffer allocator options */
-//#define MBEDTLS_MEMORY_ALIGN_MULTIPLE      4 /**< Align on multiples of this value */
+#define MBEDTLS_MEMORY_ALIGN_MULTIPLE      4 /**< Align on multiples of this value */
 
 /* To use the following function macros, MBEDTLS_PLATFORM_C must be enabled. */
 /* MBEDTLS_PLATFORM_XXX_MACRO and MBEDTLS_PLATFORM_XXX_ALT cannot both be defined */
@@ -590,7 +522,7 @@
  *        macro is not defined. To completely disable return value check
  *        warnings, define #MBEDTLS_CHECK_RETURN with an empty expansion.
  */
-//#define MBEDTLS_CHECK_RETURN_WARNING
+#define MBEDTLS_CHECK_RETURN_WARNING
 
 /**
  * \def MBEDTLS_DEPRECATED_WARNING
@@ -605,7 +537,7 @@
  *
  * Uncomment to get warnings on using deprecated functions and features.
  */
-//#define MBEDTLS_DEPRECATED_WARNING
+#define MBEDTLS_DEPRECATED_WARNING
 
 /**
  * \def MBEDTLS_DEPRECATED_REMOVED
@@ -681,6 +613,7 @@
  *
  * Enable the checkup functions (*_self_test).
  */
+// esp abschalten
 #define MBEDTLS_SELF_TEST
 
 /**
@@ -747,7 +680,7 @@
  * This option enables functions for getting the version of TF-PSA-Crypto
  * at runtime defined in include/tf-psa-crypto/version.h.
  */
-#define TF_PSA_CRYPTO_VERSION
+//#define TF_PSA_CRYPTO_VERSION
 
 /** \} name SECTION: General and test configuration options */
 
@@ -770,7 +703,7 @@
  *
  * Uncomment to enable the LMS verification algorithm and public key operations.
  */
-#define MBEDTLS_LMS_C
+//#define MBEDTLS_LMS_C
 
 /**
  * \def MBEDTLS_LMS_PRIVATE
@@ -816,7 +749,7 @@
  *
  * Auto enables: PSA_WANT_ALG_ECB_NO_PADDING
  */
-#define MBEDTLS_NIST_KW_C
+//#define MBEDTLS_NIST_KW_C
 
 /**
  * \def MBEDTLS_PK_C
@@ -845,7 +778,7 @@
  *
  * This module adds support for the PKCS#5 functions.
  */
-#define MBEDTLS_PKCS5_C
+//#define MBEDTLS_PKCS5_C
 
 /**
  * \def MBEDTLS_PK_PARSE_C
@@ -872,7 +805,7 @@
  *
  * Disable if you only need to support RFC 5915 + 5480 key formats.
  */
-#define MBEDTLS_PK_PARSE_EC_EXTENDED
+//#define MBEDTLS_PK_PARSE_EC_EXTENDED
 
 /**
  * \def MBEDTLS_PK_PARSE_EC_COMPRESSED
@@ -881,7 +814,7 @@
  * (PSA_ECC_FAMILY_SECP_XXX and PSA_ECC_FAMILY_BRAINPOOL_XXX) which are using the
  * compressed point format.
  */
-#define MBEDTLS_PK_PARSE_EC_COMPRESSED
+//#define MBEDTLS_PK_PARSE_EC_COMPRESSED
 
 /**
  * \def MBEDTLS_PK_WRITE_C
@@ -894,7 +827,7 @@
  *
  * Uncomment to enable generic public key write functions.
  */
-#define MBEDTLS_PK_WRITE_C
+//#define MBEDTLS_PK_WRITE_C
 
 /** \} name SECTION: Cryptographic mechanism selection (extended API) */
 
@@ -937,7 +870,7 @@
  *
  * This module is required for PEM support (required by X.509).
  */
-#define MBEDTLS_BASE64_C
+//#define MBEDTLS_BASE64_C
 
 /**
  * \def MBEDTLS_PEM_PARSE_C
@@ -952,7 +885,7 @@
  *
  * This modules adds support for decoding / parsing PEM files.
  */
-#define MBEDTLS_PEM_PARSE_C
+//#define MBEDTLS_PEM_PARSE_C
 
 /**
  * \def MBEDTLS_PEM_WRITE_C
@@ -966,7 +899,7 @@
  *
  * This modules adds support for encoding / writing PEM files.
  */
-#define MBEDTLS_PEM_WRITE_C
+//#define MBEDTLS_PEM_WRITE_C
 
 /** \} name SECTION: Data format support */
 
@@ -994,7 +927,7 @@
  *
  * This module provides the CTR_DRBG AES random number generator.
  */
-#define MBEDTLS_CTR_DRBG_C
+//#define MBEDTLS_CTR_DRBG_C
 
 /**
  * \def MBEDTLS_ENTROPY_NO_SOURCES_OK
@@ -1102,7 +1035,7 @@
  * \note Enabling this option causes overlap of input and output buffers
  *       not to be supported by PSA functions.
  */
-//#define MBEDTLS_PSA_ASSUME_EXCLUSIVE_BUFFERS
+#define MBEDTLS_PSA_ASSUME_EXCLUSIVE_BUFFERS
 
 /**
  * \def MBEDTLS_PSA_BUILTIN_GET_ENTROPY
@@ -1135,6 +1068,7 @@
  *   client-only builds (#MBEDTLS_PSA_CRYPTO_CLIENT enabled and
  *   #MBEDTLS_PSA_CRYPTO_C disabled).
  */
+// esp disable
 #define MBEDTLS_PSA_BUILTIN_GET_ENTROPY
 
 /** \def MBEDTLS_PSA_CRYPTO_BUILTIN_KEYS
@@ -1251,7 +1185,7 @@
  *           either MBEDTLS_PSA_ITS_FILE_C or a native implementation of
  *           the PSA ITS interface
  */
-#define MBEDTLS_PSA_CRYPTO_STORAGE_C
+//#define MBEDTLS_PSA_CRYPTO_STORAGE_C
 
 /**
  * \def MBEDTLS_PSA_DRIVER_GET_ENTROPY
@@ -1279,6 +1213,7 @@
  *   client-only builds (#MBEDTLS_PSA_CRYPTO_CLIENT enabled and
  *   #MBEDTLS_PSA_CRYPTO_C disabled).
  */
+// für esp gebraucht
 //#define MBEDTLS_PSA_DRIVER_GET_ENTROPY
 
 /**
@@ -1291,7 +1226,7 @@
  *
  * Requires: MBEDTLS_FS_IO
  */
-#define MBEDTLS_PSA_ITS_FILE_C
+//#define MBEDTLS_PSA_ITS_FILE_C
 
 /**
  * \def MBEDTLS_PSA_KEY_STORE_DYNAMIC
@@ -1308,7 +1243,7 @@
  * Module:  core/psa_crypto.c
  * Requires: MBEDTLS_PSA_CRYPTO_C
  */
-#define MBEDTLS_PSA_KEY_STORE_DYNAMIC
+//#define MBEDTLS_PSA_KEY_STORE_DYNAMIC
 
 /**
  * \def MBEDTLS_PSA_STATIC_KEY_SLOTS
@@ -1397,7 +1332,7 @@
  *
  * This option has no effect when #MBEDTLS_PSA_CRYPTO_C is disabled.
  */
-//#define MBEDTLS_PSA_KEY_SLOT_COUNT 32
+#define MBEDTLS_PSA_KEY_SLOT_COUNT 4
 
 /**
  * \def MBEDTLS_PSA_STATIC_KEY_SLOT_BUFFER_SIZE
@@ -1419,7 +1354,7 @@
  *
  * \note Valid values: 128 or default of 256.
  */
-//#define MBEDTLS_PSA_CRYPTO_RNG_STRENGTH               256
+#define MBEDTLS_PSA_CRYPTO_RNG_STRENGTH               128
 
 /**
  * \def MBEDTLS_PSA_CRYPTO_RNG_HASH
@@ -1438,7 +1373,7 @@
  * a default hash that satisfies the above constraints is selected automatically.
  * If no suitable default can be selected, this will result in a build error.
  */
-//#define MBEDTLS_PSA_CRYPTO_RNG_HASH PSA_ALG_SHA_256
+#define MBEDTLS_PSA_CRYPTO_RNG_HASH PSA_ALG_SHA_256
 
 /**
  * \def MBEDTLS_PSA_RNG_RESEED_INTERVAL
@@ -1491,7 +1426,7 @@
  *
  * This modules adds support for the AES-NI instructions on x86.
  */
-#define MBEDTLS_AESNI_C
+//#define MBEDTLS_AESNI_C
 
 /**
  * \def MBEDTLS_AESCE_C
@@ -1517,7 +1452,7 @@
  *
  * This module adds support for the AES Armv8-A Cryptographic Extensions on Armv8 systems.
  */
-#define MBEDTLS_AESCE_C
+//#define MBEDTLS_AESCE_C
 
 /**
  * \def MBEDTLS_AES_ROM_TABLES
@@ -1536,7 +1471,7 @@
  *
  * This option is independent of \c MBEDTLS_AES_FEWER_TABLES.
  */
-//#define MBEDTLS_AES_ROM_TABLES
+#define MBEDTLS_AES_ROM_TABLES
 
 /**
  * \def MBEDTLS_AES_FEWER_TABLES
@@ -1557,7 +1492,7 @@
  *
  * This option is independent of \c MBEDTLS_AES_ROM_TABLES.
  */
-//#define MBEDTLS_AES_FEWER_TABLES
+#define MBEDTLS_AES_FEWER_TABLES
 
 /**
  * \def MBEDTLS_AES_ONLY_128_BIT_KEY_LENGTH
@@ -1574,7 +1509,7 @@
  *
  * Requires: The AES built-in implementation
  */
-//#define MBEDTLS_AES_ONLY_128_BIT_KEY_LENGTH
+#define MBEDTLS_AES_ONLY_128_BIT_KEY_LENGTH
 
 /*
  * Disable plain C implementation for AES.
@@ -1635,7 +1570,7 @@
  *
  * Comment this macro to disable NIST curves optimisation.
  */
-#define MBEDTLS_ECP_NIST_OPTIM
+//#define MBEDTLS_ECP_NIST_OPTIM
 
 /**
  * \def MBEDTLS_ECP_RESTARTABLE
@@ -1725,7 +1660,7 @@
  *
  * Comment to disable the use of assembly code.
  */
-#define MBEDTLS_HAVE_ASM
+//#define MBEDTLS_HAVE_ASM
 
 /**
  * \def MBEDTLS_HAVE_SSE2
@@ -1762,7 +1697,7 @@
  * example, if double-width division is implemented in software, disabling
  * it can reduce code size in some embedded targets.
  */
-//#define MBEDTLS_NO_UDBL_DIVISION
+#define MBEDTLS_NO_UDBL_DIVISION
 
 /**
  * \def MBEDTLS_NO_64BIT_MULTIPLICATION
@@ -1822,7 +1757,7 @@
  *       #MBEDTLS_PK_PARSE_EC_EXTENDED as those currently require a subset of
  *       the built-in ECC implementation, see docs/driver-only-builds.md.
  */
-//#define MBEDTLS_PSA_P256M_DRIVER_ENABLED
+#define MBEDTLS_PSA_P256M_DRIVER_ENABLED
 
 /**
  * \def MBEDTLS_RSA_NO_CRT
@@ -1849,7 +1784,8 @@
  *
  * Uncomment to enable the smaller implementation of SHA256.
  */
-//#define MBEDTLS_SHA256_SMALLER
+// esp faster
+#define MBEDTLS_SHA256_SMALLER
 
 /**
  * \def MBEDTLS_SHA256_USE_ARMV8_A_CRYPTO_IF_PRESENT
